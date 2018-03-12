@@ -3,8 +3,9 @@ const path = require('path');
 
 const data = require('./data');
 
-const app = express();
+const TIMEOUT = 1000;
 
+const app = express();
 app.use(express.static('client'));
 
 app.get('/', (req, res) => {
@@ -15,20 +16,20 @@ app.get('/api/:type', (req, res) => {
   const type = req.params.type;
   console.log('Fetching', type);
 
+  // Added timeout to simulate database fetching delay
   setTimeout(()=> {
     switch(type) {
     case 'cats':
       res.json(data.catsList);
-      return;
+      break;
     case 'sharks':
       res.json(data.sharksList);
-      return;
+      break;
     default:
       res.json(data.catsList.concat(data.sharksList));
-      return;
+      break;
     }
-  }, 1000);
-
+  }, TIMEOUT);
 });
 
 app.get('*', (req, res) => {
