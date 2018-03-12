@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.imageContainer {
+  width: 540px;
+  height: 320px;
+  position: relative;
+  border: 5px solid #3EB3EB;
+  border-radius: 5px;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loader {
+  color: white;
+}
+
+.mainContainer {
+  position: fixed;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  user-select: none;
+  background: linear-gradient(to top, #232526 , #414345);
+}
+
+.carousel {
+  max-width: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.arrow {
+  margin: 20px 50px;
+  cursor: pointer;
+  transition: all 0.4s;
+  color: #3EB3EB;
+}
+
+.arrow:hover {
+  color: #CDECFE;
+}
+
+.hidden {
+  opacity: 0;
+  cursor: auto;
+}
+
+button {
+  padding: 15px 20px;
+  margin: 20px;
+  width: 100px;
+  background-color: transparent;
+  border: 3px solid #3EB3EB ;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-weight: 200;
+  outline: none;
+  color: #eee;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.button-active {
+  background-color: #3EB3EB ;
+}
+
+.title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  color: #eee;
+}
